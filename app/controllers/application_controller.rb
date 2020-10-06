@@ -4,11 +4,7 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
  def current_user
-  @user = params[:username]
-  if @user.nil?
-    redirect_to '/login', notice: "Name not found"
-  else 
-    "Kate Libby"
-  end 
+  session[:name]
  end 
+
 end
